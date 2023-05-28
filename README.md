@@ -8,3 +8,65 @@ Neste código também está comtemplado a solicitação de Herança!
 Observe que as classes "Cachorro" e "Gato" herdam da classe (Herança)"Animal" e implementam o método "emanarSom" de maneira diferente. No entanto, podemos tratá-los como objetos do tipo "Animal" e chamar o método "emanarSom" para cada um sem nos preocuparmos com diferenças específicas de implementação.
 
 Isso é possível graças ao polimorfismo, que permite que objetos de diferentes classes sejam tratados de forma semelhante, com base em uma interface comum.
+O encapsulamento é um princípio de programação orientado a objetos que envolve o agrupamento de dados e métodos relacionados em uma unidade chamada classe. Ele protege os dados internos de uma classe permitindo acesso controlado e fornecendo uma interface pública para interagir com esses dados.
+
+O encapsulamento permite que os dados internos de uma classe sejam protegidos e manipulados apenas por métodos específicos, fornecendo controle sobre o acesso e modificação desses dados.
+
+Veja a seguir os exemplos de códigos comtemplando a solicitação do Professor Fabricio Tadeu Dias para a utilização de Polimorfismo, Herança e Encapsulamento:
+
+1º código 
+
+class Animal:
+    def emanarSom(self):
+        pass
+
+class Cachorro(Animal):
+    def emanarSom(self):
+        print("O cachorro está latindo!")
+
+class Gato(Animal):
+    def emanarSom(self):
+        print("O gato está miando!")
+
+# Criando instâncias das classes Cachorro e Gato
+cachorro = Cachorro()
+gato = Gato()
+
+# Chamando o método emanarSom para cada instância
+cachorro.emanarSom()
+gato.emanarSom()
+
+Observe que as classes "Cachorro" e "Gato" herdam da classe (Herança) "Animal" e implementam o método "emanarSom" de maneira diferente. No entanto, podemos tratá-los como objetos do tipo "Animal" e chamar o método "emanarSom" para cada um sem nos preocuparmos com diferenças específicas de implementação.
+
+Isso é possibilitado pelo polimorfismo, que permite que objetos de diferentes classes sejam tratados de forma semelhante, com base em uma interface comum.
+
+2º código
+
+class Carro:
+    def __init__(self, marca, modelo):
+        self.marca = marca
+        self.modelo = modelo
+        self.__quilometragem = 0  # Atributo encapsulado com dois underscores "__"
+
+    def dirigir(self, distancia):
+        self.__quilometragem += distancia
+
+    def obter_quilometragem(self):
+        return self.__quilometragem
+
+# Criando uma instância da classe Carro
+meu_carro = Carro("Evoque", "Prisma")
+
+# Acessando os atributos e métodos públicos
+print(f"Marca: {meu_carro.marca}")
+print(f"Modelo: {meu_carro.modelo}")
+meu_carro.dirigir(100)
+print(f"Quilometragem: {meu_carro.obter_quilometragem()}")
+
+
+Neste código, a classe "Carro" encapsula os atributos "marca", "modelo" e "__quilometragem". O atributo " quilometragem" é encapsulado usando dois sublinhados "__ ", tornando-o privado e inacessível diretamente de fora da classe.
+
+Para interagir com a quilometragem, usamos o método público "dirigir", que incrementa a quilometragem internamente. Para obter o valor da quilometragem, usamos o método público "obter_quilometragem".
+
+O encapsulamento permite que os dados internos de uma classe sejam protegidos e manipulados apenas por meio de métodos específicos, fornecendo controle sobre o acesso e a modificação desses dados.
+
